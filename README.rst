@@ -119,7 +119,7 @@ Links
 
 -------------------------------------------------
 
-# The Future of discord.py
+**The Future of discord.py**
 
 *If you're looking for a tl;dr, you can [check the FAQ](#FAQ).*
 
@@ -131,7 +131,7 @@ Unfortunately, today marks the end of my involvement in the project. Therefore, 
 
 I want to assure you that this was not a decision made lightly. My hope is that this document explains my thoughts and the process leading up to the decision. I've also written an [FAQ](#FAQ) if you just want a quick rundown.
 
-## Grassroots Movement
+**Grassroots Movement**
 
 I joined Discord on August 10th 2015. I had friends who recommended Discord to me, and we wanted to move our tournament operations from IRC/Skype over to a new platform due to excessive grievances with those platforms. The first time I used Discord I was pretty impressed; however, for me to move on to it, we needed an API for my bots to function. Unfortunately, at the time, there was no "official" API. Luckily, I had found an API wrapper by the name of `node-discord` and used it. This API wrapper was very minimal, only containing a `debug` event that dumped the gateway messages (at the time, `v2`) and a `message` event that was special just for messages. This experience got me really interested in figuring out how the API worked. I made my bot, [R. Danny][r-danny-blog], the very next day (August 11th) and invited it to the r/Splatoon server.
 
@@ -141,7 +141,7 @@ I continued working on my API wrapper, aptly named `discord.py`, along with the 
 
 As time went on, Discord realised that the traditional approach of inviting bots by invite crawling was problematic. To combat this abuse vector, Discord decided to ramp up their interest in the API and made official Bot accounts that could only be invited via OAuth2 and not through the traditional invite scraping mechanism. This was considered a good change for privacy and started the hopeful beginning of Discord investing in their API. We were promised many exclusive features for bots, though our first and only feature at launch was the ability to join voice channels across many servers. The official bot API was released on April 8th 2016.
 
-## Neglect
+**Neglect**
 
 When Discord unveiled their official API back in 2016, many promises were made about features that would be implemented. Unfortunately, most of the things we were promised never ended up materialising. When we asked the Discord employees about the state of the API, they always mentioned that they lacked the development resources required to work on the API and that it made no business sense to prioritise or work on the API platform. This was completely understandable since Discord was, at the time, a small company with a lot on their plate. However, this lack of priority meant that the API languished over the next 3 years. There was growing frustration within the Discord bot community that we weren't being listened to.
 
@@ -149,7 +149,7 @@ Our Discord API server was originally a place where Discord employees and librar
 
 It wasn't until around November 2019 that Discord started focusing more of their resources on their bot development platform.
 
-## The Discord Infrastructure Server
+**The Discord Infrastructure Server**
 
 While our communication suffered, a different, more private server was getting more attention. This server was colloquially known as "dinfra", short for "Discord Infrastructure". Originally, the purpose of this server was to share infrastructure status with the bigger bot developers to give them a heads-up on when things might be turbulent. However, the goal of this server morphed into being a semi-official way for big bot developers and Discord employees to communicate about the future of the platform.
 
@@ -157,7 +157,7 @@ It should be noted that this server did not have many library developers within 
 
 One such change was the introduction of a feature called `guild_subscriptions`, which was a way to reduce the bandwidth of a large bot by opting out of `PRESENCE_UPDATE` and `TYPING_START` events. These events typically made up around 95% of a bot's bandwidth and CPU usage, and it was a common feature request to remove these events from showing up in the gateway event stream. Unfortunately, this boolean toggle came with the caveat of also turning off member-related events, and it was undesirable for a lot of bots. A better system needed to be made. This system became known as intents.
 
-## Privileged Intents
+**Privileged Intents**
 
 Around December 2019, there were discussions about a new feature named intents in the Discord Infrastructure server. The goal of this system was to have a more granular approach in disabling events that so many bot developers had hoped for. This change would, presumably, be backwards compatible with the way things were done at the time. Unfortunately, at the same time, there were growing concerns with a user-bot ring that made a website and scraper known as "dis.cool", which farmed user information.
 
@@ -179,7 +179,7 @@ There was a lot of uproar over this addition, not just within the Discord API se
 
 They assured us that they were listening to our feedback.
 
-## Verification
+**Verification**
 
 After the large amount of discussion involving privileged intents, taking place over the course of around 3 months, most of the library developers, contributors, and Discord employees were drained from the conversation. As a result, after this, communication with us went essentially radio silent. We hadn't spoken to any Discord employees about anything, except a sneak peek of the `allowed_mentions` functionality early in February, slightly after the initial blowback.
 
@@ -197,23 +197,26 @@ There was a lot of data concerning how bot developers felt about the change that
 
 ![Mason calling me a martyr](https://user-images.githubusercontent.com/1695103/128839762-7f7e6b9c-ef66-496b-ad69-5bd544ac78f0.png)
 
-## Bureaucratic Disaster
+**Bureaucratic Disaster**
 
 Following the intention to verify bots in the ecosystem, the support staff was immediately overwhelmed with the requests, causing their previous 5-day SLA promise to completely fall apart. The entire Bot & API Team had to work together to ensure that they could meet the demand of people verifying their bots. However, despite their best efforts, they were behind consistently for multiple weeks, even months, throughout the entire year of 2020, and this still continues to this day in 2021.
 
 Discord had originally used the "Verified Bot Developer" badge as an incentive to get people to be "recognised" for their efforts within the ecosystem. According to them, this led to an influx of people applying for verification for the sole purpose of the badge. Eventually, they revoked the badge entirely and changed the badge name to "Early Verified Bot Developer". By not removing the badge instead, this had the consequence of feeding into the account black market. The resulting outrage from the bot developers who did not get a badge after the arbitrary cut-off was large enough that Discord employees rewrote history and handed out mutes for people who were just asking for the badge. They called this behaviour "badgeposting".
 
-![Badgeposting](https://user-images.githubusercontent.com/1695103/128840429-bd7822b9-599a-4d98-a4c1-37faff1067c7.png)
+![Badgeposting]
+(https://user-images.githubusercontent.com/1695103/128840429-bd7822b9-599a-4d98-a4c1-37faff1067c7.png)
 
-![History being rewritten](https://user-images.githubusercontent.com/1695103/128839827-94b504b0-b7cb-4104-82b6-506fe6b060a6.png)
+![History being rewritten]
+(https://user-images.githubusercontent.com/1695103/128839827-94b504b0-b7cb-4104-82b6-506fe6b060a6.png)
 
 Discord consistently made promises all throughout 2020 that they were going to meet their fabled 5-day SLA. Despite Discord blaming badges for congesting the verification queue, the problem was not solved. I do not personally see a future where this consistent 5-day SLA happens. Despite hiring more support staff to handle the queue, it is still a month behind and is only going to get worse as more people will need to re-apply for their intents request in the following months before the deadline.
 
-## Slash Commands
+**Slash Commands**
 
 Around July and August 2020, the Discord employees started talking to the people in the Discord Infrastructure server about the possibility of Slash Commands finally coming to Discord. This feature was one that had been in the talks since the very beginning of Discord's history, so some people were hyped it was finally coming. Unfortunately, at around the same time, Discord employees were hinting that message content would be removed or restricted.
 
-![Discord Infrastructure Leak](https://user-images.githubusercontent.com/1695103/128839881-a17407aa-cc4d-4d7c-a4f7-6028357f5e9b.png)
+![Discord Infrastructure Leak]
+(https://user-images.githubusercontent.com/1695103/128839881-a17407aa-cc4d-4d7c-a4f7-6028357f5e9b.png)
 
 After my mole shared these images with me, I decided to share them with the remaining library developers in our private server. We began to see the introduction of Slash Commands as a way to destroy our old work. At this point, Slash Commands were not actually released. They were mainly in the development phase. However, we figured that when Slash Commands would be introduced to the public, that they would remove message content along with it.
 
@@ -223,7 +226,7 @@ When the Slash Commands beta reached the public phase, a lot of the general publ
 
 We were told that the permissions system would improve over time, though this never ended up materialising. The ability for a Slash Command (aka an Interaction) to bypass the `@everyone` permission wasn't fixed until May 2021, 6 months after it had already been reported.
 
-## Message Content Privileged Intent
+**Message Content Privileged Intent**
 
 Around early June 2021, the top 8 most popular library developers were contacted regarding a special meeting about a topic that was important to all of us in the ecosystem. Knowing what we knew about the message intent, we figured that this would be the last chance we would get in order to defend the ecosystem from breakage and hopefully get them to change their minds on the entire thing. The meeting was bound by an NDA, which made us reluctant to sign it, but since we believed and were told that this would be our final chance to get a seat at the table for this change, we all agreed with the sole purpose of convincing the developers that this direction was a bad idea.
 
@@ -231,21 +234,22 @@ Unfortunately, due to being legally bound by this NDA, I cannot share too many d
 
 All of us library developers were against the change for message content to become a privileged intent. It falls under the same bureaucratic issues that regular privileged intents suffer from, except with more devastating consequences. A lot of current bots in the ecosystem are faced with a choice of either getting rewritten to comply with changes I believe to be unnecessary, or to die. Discord seems to believe that this change is for the better – but no alternative path was explored or brought up. Instead, they opted to deploy the nuclear option and are hoping to fix the problem that way. Discord also believes that most bots will fully migrate over within the timeline given. I do not believe that this will be the case.
 
-## Future Direction
+**Future Direction**
 
 Discord has a lot of things planned in order to make the transition easier for users in the future. I'm not sure whether they'll actually finish all these planned improvements between now and the deadline. Historically, they've only managed to finish these changes a month before the deadline kicks in. Rather than improving the system before forcing it onto users, they have decided to announce the changes first and then promise on good faith that they will implement the necessary features to make the transition smooth. This gives bot developers no time to actually accommodate their bot for the changes, in case a feature they depend on for the migration doesn't exist yet.
 
 Discord has already began rushing features in a sloppy and hasty manner. One of the newer features, context menus, has had a lot of feedback from many library developers and bot developers asking for the type to be overhauled and split to prevent library breakage and make the API more intuitive to understand. Despite this narrow feedback being provided by most users in the private beta for the feature, it has been explicitly ignored with the Discord employees claiming that [they just wanted to get something out quickly][context-menu-change].
 
-![Minn's response to night](https://user-images.githubusercontent.com/1695103/128839928-88a95d20-16c7-48e5-9000-2a871a2934c5.png)
+![Minn's response to night]
+(https://user-images.githubusercontent.com/1695103/128839928-88a95d20-16c7-48e5-9000-2a871a2934c5.png)
 
 I do not believe in waiting on promises for something to be better, when historically these promises have been empty. I do not think the situation will radically improve by April 2022 and do not think this change is worth the everlasting impact it will have on the ecosystem. Unfortunately, this decision is final, and the only thing I can feasibly do at this stage is to watch from afar. I do not have the motivation to keep up with an ecosystem I no longer believe in. I wanted a rich bot ecosystem to thrive and flourish, for bots to reach their full potential, yet Discord has repeatedly decided that limitations are a better route. This is why I have decided to step down as maintainer of this project. My involvement in discord.py and the API was always fuelled by passion and hope. These recent changes have drained me completely of both of those things.
 
-# FAQ
+**FAQ**
 
 I imagine there are going to be a lot of questions from people who want the nitty-gritty.
 
-## Why are you stopping development?
+**Why are you stopping development?**
 
 My motivation to work on Discord has been dwindling over the past year, since the verification system was introduced. Persistent tone deafness, deadlines, lies, gaslighting, and rapid changes without proper consultation by the Discord employees make it hard to have the motivation necessary to work with the frequent changes and the limitations being placed on me.
 
@@ -253,29 +257,32 @@ To me, the message content privileged intent signals the end of the creative fre
 
 However, I don't want to give the impression that the things Discord is building are not cool. They are indeed very cool. Things like buttons and UI extensions are features that we've been wanting since 2016, and it's great to see them in the platform. It's just that it's coupled with a tough pill to swallow that damages the ecosystem as a whole. A price I'm not exactly willing to pay.
 
-## What happens now?
+**What happens now?**
 
 Development will cease and the repository will be put into a read-only mode.
 
-## What can I do about this?
+**What can I do about this?**
 
 Unfortunately, there isn't much you can do to stop this train other than telling Discord your opinion on the changes. The thought of the ecosystem breaking has caused me a great deal of stress and mental anguish. I've spent the better half of the past 2 months attempting to convey the distress I feel to various Discord employees to no avail. Discord seems to believe that everything will be fine in 9 months time, but I do not subscribe to this thought process.
 
-## What's going to happen to my bot?
+**What's going to happen to my bot?**
 
 This change is radical, even if I was removed from the equation. Discord expects all bots to migrate over to Slash Commands by April 2022 – whether I do anything to help or not. My proposed API I had for Slash Commands is incompatible with the current code for the commands extension due to the two systems being fundamentally different in paradigm. This means that no matter what path I would have chosen to take, a vast majority of library users would have needed to rewrite their code anyway.
 
 It should be noted that Discord wants all bots over 75 guilds to migrate over to Slash Commands in the foreseeable future. If you want to apply for the message content intent, you **cannot** use it for command handling purposes; they will explicitly deny you the intent. Therefore, effectively everyone must move over to Slash Commands for their bot to function.
 
-![Discord Employee's Statement on Message Content Intent](https://user-images.githubusercontent.com/1695103/129664615-3ec46e4e-38e7-4a89-ba1c-ff7c3d70ce9e.png)
+![Discord Employee's Statement on Message Content Intent]
+(https://user-images.githubusercontent.com/1695103/129664615-3ec46e4e-38e7-4a89-ba1c-ff7c3d70ce9e.png)
 
-![Kady's statement on Message Content Intent](https://user-images.githubusercontent.com/1695103/131197302-08f128cb-af2b-4a4b-b5e6-20e84658b324.png)
+![Kady's statement on Message Content Intent]
+(https://user-images.githubusercontent.com/1695103/131197302-08f128cb-af2b-4a4b-b5e6-20e84658b324.png)
 
-## I want my bot to continue working!
+**I want my bot to continue working!**
 
 During the Developer Q&A session on August 4th, Mason, the Project Manager of the Bot & API team, encouraged you to rewrite your bot since it's "easy" and "dope". 
 
-![Question from the Q&A](https://user-images.githubusercontent.com/1695103/128839984-9e6adbe6-31f5-4270-afc4-dcbdc0843ac8.png)
+![Question from the Q&A]
+(https://user-images.githubusercontent.com/1695103/128839984-9e6adbe6-31f5-4270-afc4-dcbdc0843ac8.png)
 
 > Uh, popular libraries. So, we obviously do not have control over third party libraries. They are third party. Um, we try to work with them very closely to keep them informed of changes, uh and to answer their questions about implementation and API and consistencies and "Hey does this API suck or not". Uh, Slash Commands have been in an open developer beta since December of last year. Changes are not happening until an additional 9 months from now. Which will make it 1 year and 4 months slash 16 months if I know how to do math correctly since Slash Commands were first released. Um many libraries do have support. Some have unofficial forks. I will also say that for those intrepid developers they are pretty well usable without libraries but I know that that is a much sort of bigger task to undertake. Um but if you haven't checked out using Slash Commands over HTTP and outgoing webhooks, it's pretty dope and really easily scalable.
 
@@ -290,7 +297,8 @@ Therefore, if you want your bot to continue working you have a few options:
 
 Discord has repeatedly stated that they believe things will be fine by April 2022:
 
-![Kady's statement](https://user-images.githubusercontent.com/1695103/128840026-87d7a66f-4c5f-4a8a-92cd-5c60ba4c068c.png)
+![Kady's statement]
+(https://user-images.githubusercontent.com/1695103/128840026-87d7a66f-4c5f-4a8a-92cd-5c60ba4c068c.png)
 
 However, the reality of the situation is that a significant number of libraries do not implement Slash Commands. The following is a table of support:
 
