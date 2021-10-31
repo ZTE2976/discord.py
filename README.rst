@@ -191,11 +191,11 @@ Discord claimed it would help with security and privacy by preventing malicious 
 
 Since there was a lot of pushback on this topic, I made a form to get opinions from the developer ecosystem at the time and received around 1600 responses. I had planned to share it with Discord with hopes of maybe changing their mind on the concept or giving them insight into how developers felt, but they told me that my sample size was too small to be considered. Anyone with a passing knowledge of statistics would know that a sample size of 1600 is not insignificant. Nevertheless, most people who did the survey did not enjoy the idea of sharing their government-issued ID to verify their bot:
 
-![Bot Developer Survey 1](https://user-images.githubusercontent.com/1695103/128839688-a764722c-a449-45d2-8273-1b94ce0d6cae.png)
+[Bot Developer Survey 1](https://user-images.githubusercontent.com/1695103/128839688-a764722c-a449-45d2-8273-1b94ce0d6cae.png)
 
 There was a lot of data concerning how bot developers felt about the change that I ultimately couldn't present to the Discord employees due to them not wanting it. At around this point in time, most of my motivation was waning. I was against the verification system at its core, since I considered it invasive and unnecessary. When asking an innocent question to Mason, the Project Manager of the Bot & API team, about whether my bot could connect to the gateway without being verified, he responded rudely and called me a "martyr" with an unnecessarily threatening tone:
 
-![Mason calling me a martyr](https://user-images.githubusercontent.com/1695103/128839762-7f7e6b9c-ef66-496b-ad69-5bd544ac78f0.png)
+[Mason calling me a martyr](https://user-images.githubusercontent.com/1695103/128839762-7f7e6b9c-ef66-496b-ad69-5bd544ac78f0.png)
 
 **Bureaucratic Disaster**
 
@@ -203,10 +203,10 @@ Following the intention to verify bots in the ecosystem, the support staff was i
 
 Discord had originally used the "Verified Bot Developer" badge as an incentive to get people to be "recognised" for their efforts within the ecosystem. According to them, this led to an influx of people applying for verification for the sole purpose of the badge. Eventually, they revoked the badge entirely and changed the badge name to "Early Verified Bot Developer". By not removing the badge instead, this had the consequence of feeding into the account black market. The resulting outrage from the bot developers who did not get a badge after the arbitrary cut-off was large enough that Discord employees rewrote history and handed out mutes for people who were just asking for the badge. They called this behaviour "badgeposting".
 
-![Badgeposting]
+[Badgeposting]
 (https://user-images.githubusercontent.com/1695103/128840429-bd7822b9-599a-4d98-a4c1-37faff1067c7.png)
 
-![History being rewritten]
+[History being rewritten]
 (https://user-images.githubusercontent.com/1695103/128839827-94b504b0-b7cb-4104-82b6-506fe6b060a6.png)
 
 Discord consistently made promises all throughout 2020 that they were going to meet their fabled 5-day SLA. Despite Discord blaming badges for congesting the verification queue, the problem was not solved. I do not personally see a future where this consistent 5-day SLA happens. Despite hiring more support staff to handle the queue, it is still a month behind and is only going to get worse as more people will need to re-apply for their intents request in the following months before the deadline.
@@ -215,7 +215,7 @@ Discord consistently made promises all throughout 2020 that they were going to m
 
 Around July and August 2020, the Discord employees started talking to the people in the Discord Infrastructure server about the possibility of Slash Commands finally coming to Discord. This feature was one that had been in the talks since the very beginning of Discord's history, so some people were hyped it was finally coming. Unfortunately, at around the same time, Discord employees were hinting that message content would be removed or restricted.
 
-![Discord Infrastructure Leak]
+[Discord Infrastructure Leak]
 (https://user-images.githubusercontent.com/1695103/128839881-a17407aa-cc4d-4d7c-a4f7-6028357f5e9b.png)
 
 After my mole shared these images with me, I decided to share them with the remaining library developers in our private server. We began to see the introduction of Slash Commands as a way to destroy our old work. At this point, Slash Commands were not actually released. They were mainly in the development phase. However, we figured that when Slash Commands would be introduced to the public, that they would remove message content along with it.
@@ -240,7 +240,7 @@ Discord has a lot of things planned in order to make the transition easier for u
 
 Discord has already began rushing features in a sloppy and hasty manner. One of the newer features, context menus, has had a lot of feedback from many library developers and bot developers asking for the type to be overhauled and split to prevent library breakage and make the API more intuitive to understand. Despite this narrow feedback being provided by most users in the private beta for the feature, it has been explicitly ignored with the Discord employees claiming that [they just wanted to get something out quickly][context-menu-change].
 
-![Minn's response to night]
+[Minn's response to night]
 (https://user-images.githubusercontent.com/1695103/128839928-88a95d20-16c7-48e5-9000-2a871a2934c5.png)
 
 I do not believe in waiting on promises for something to be better, when historically these promises have been empty. I do not think the situation will radically improve by April 2022 and do not think this change is worth the everlasting impact it will have on the ecosystem. Unfortunately, this decision is final, and the only thing I can feasibly do at this stage is to watch from afar. I do not have the motivation to keep up with an ecosystem I no longer believe in. I wanted a rich bot ecosystem to thrive and flourish, for bots to reach their full potential, yet Discord has repeatedly decided that limitations are a better route. This is why I have decided to step down as maintainer of this project. My involvement in discord.py and the API was always fuelled by passion and hope. These recent changes have drained me completely of both of those things.
@@ -271,17 +271,17 @@ This change is radical, even if I was removed from the equation. Discord expects
 
 It should be noted that Discord wants all bots over 75 guilds to migrate over to Slash Commands in the foreseeable future. If you want to apply for the message content intent, you **cannot** use it for command handling purposes; they will explicitly deny you the intent. Therefore, effectively everyone must move over to Slash Commands for their bot to function.
 
-![Discord Employee's Statement on Message Content Intent]
+[Discord Employee's Statement on Message Content Intent]
 (https://user-images.githubusercontent.com/1695103/129664615-3ec46e4e-38e7-4a89-ba1c-ff7c3d70ce9e.png)
 
-![Kady's statement on Message Content Intent]
+[Kady's statement on Message Content Intent]
 (https://user-images.githubusercontent.com/1695103/131197302-08f128cb-af2b-4a4b-b5e6-20e84658b324.png)
 
 **I want my bot to continue working!**
 
 During the Developer Q&A session on August 4th, Mason, the Project Manager of the Bot & API team, encouraged you to rewrite your bot since it's "easy" and "dope". 
 
-![Question from the Q&A]
+[Question from the Q&A]
 (https://user-images.githubusercontent.com/1695103/128839984-9e6adbe6-31f5-4270-afc4-dcbdc0843ac8.png)
 
 > Uh, popular libraries. So, we obviously do not have control over third party libraries. They are third party. Um, we try to work with them very closely to keep them informed of changes, uh and to answer their questions about implementation and API and consistencies and "Hey does this API suck or not". Uh, Slash Commands have been in an open developer beta since December of last year. Changes are not happening until an additional 9 months from now. Which will make it 1 year and 4 months slash 16 months if I know how to do math correctly since Slash Commands were first released. Um many libraries do have support. Some have unofficial forks. I will also say that for those intrepid developers they are pretty well usable without libraries but I know that that is a much sort of bigger task to undertake. Um but if you haven't checked out using Slash Commands over HTTP and outgoing webhooks, it's pretty dope and really easily scalable.
