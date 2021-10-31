@@ -398,10 +398,16 @@ And of course, thanks to you for reading through all this.
 
 Until next time.
 
+-------------------------------------------------
 
 [discord-blog-dapi]: https://blog.discord.com/the-robot-revolution-has-unofficially-begun-unofficial-api-23a3c722d5bf
+
 [r-danny-blog]: https://gist.github.com/Rapptz/99cf4c1ab8b5ce584e2bf0b7ba88d5f8
+
 [privileged-intents-lite]: https://gist.github.com/msciotti/223272a6f976ce4fda22d271c23d72d9
+
 [member-intent-github]: https://github.com/discord/discord-api-docs/pull/1307
+
 [discord-future-blog-post]: https://blog.discord.com/the-future-of-bots-on-discord-4e6e050ab52e
+
 [context-menu-change]: https://github.com/discord/discord-api-docs/discussions/3590#discussioncomment-1135214
